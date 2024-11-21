@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--font---------------------------->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!--CSS----------------------------->
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="styles/fontawesome-free-6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/slideshow.css" />
+    <link rel="stylesheet" href="styles/page_preloader.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <!--Script-------------------------->
+    <script type="text/javascript" src="scripts/slideshow.js"></script>
+    <script type="text/javascript" src="scripts/page_preloader.js"></script>
+    <script
+      type="text/javascript"
+      src="scripts/bootstrap.bundle.min.js"
+    ></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/all_page.js"></script>
+
+    <title>Trang chủ | Fat Store</title>
+  </head>
+  <body>
+    <!--pre loadder-->
+    <div id="preLoader">
+      <div class="infinityChrome">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="content" id="content">
+      <header class="header">
+        <div class="header__top">
+          <div class="header__top__left">
+            <i class="fa-regular fa-envelope"></i
+            ><a href="#">fatstore-fashion@gmail.com</a>
+          </div>
+          <div class="header__top__right">
+            <!--icon mxh-->
+            <div class="header__top__right__social">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="header__top__right__language">
+              <div>Việt Nam<i class="fa-solid fa-angle-down"></i></div>
+              <ul class="header__top__right__language__list">
+                <li><a href="#">Spanis</a></li>
+                <li><a href="#">English</a></li>
+              </ul>
+            </div>
+            <div class="header__top__right__auth">
+              <a href="subpages/account.html">
+                <i class="fa fa-user"></i>
+                Tài khoản
+              </a>
+            </div>
+            <!--Tạo nút menu khi reponsive, sủ dụng canvas Bootstrap-->
+            <div class="header__top__right__menu">
+              <button
+                class="btn btn-primary"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+                style="background-color: #f0e0e0; color: black; border: none"
+              >
+                <i class="fa-solid fa-bars"></i>
+              </button>
+
+              <div
+                class="offcanvas offcanvas-end"
+                tabindex="-1"
+                id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel"
+              >
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                    Chức năng
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <!--Hiển thị các chức năng trong menu-->
+                <div class="offcanvas-body">
+                  <div>
+                    <div class="header__top__right__menu__auth">
+                      <a href="subpages/lien_he.html" style="line-height: 2">
+                        <i class="fa fa-user"></i>Tài khoản
+                      </a>
+                    </div>
+                    <div class="header__top__right__menu__language">
+                      <div>
+                        <i class="fa-solid fa-language"></i
+                        ><a href="#" style="line-height: 2">Ngôn ngữ</a
+                        ><i class="fa-solid fa-angle-down"></i>
+                      </div>
+                      <ul
+                        class="header__top__right__menu__language__list"
+                        style="line-height: 1.5"
+                      >
+                        <li>
+                          <a href="#"
+                            >Việt Nam <i class="fa-solid fa-check"></i
+                          ></a>
+                        </li>
+                        <li><a href="#">Spanis</a></li>
+                        <li><a href="#">English</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <!--logo-->
+          <div class="header__bottom__left">
+            <img src="./images/logo.png" alt="logo" width="200px" />
+          </div>
+          <div class="header__bottom__right">
+            <!--Thanh tìm kiếm-->
+            <div class="header__bottom__right__search">
+              Tìm kiếm
+              <input
+                type="text"
+                placeholder="Nhập thông tin..."
+                class="textbox"
+              />
+              <i class="fa fa-magnifying-glass"></i>
+            </div>
+            <!--hotline-->
+            <div class="header__bottom__right__hotline">
+              <i class="fa-solid fa-phone" style="color: #cca929"></i>
+              <div>
+                <div class="sdt">0909.333.888</div>
+                <div class="text">Hỗ trợ 24/7</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--navigation sử dụng bootstrap-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link nav-link1" href="#">TRANG CHỦ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link2" href="#">SALE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link3" href="#">SẢN PHẨM</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link4" href="#">BỘ SƯU TẬP</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link nav-link5" href="#">HỖ TRỢ</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link nav-link6" href="subpages/lien_he.html"
+                    >LIÊN HỆ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section class="banner">
+        <!--ảnh slide-->
+        <div class="slideshow-container">
+          <div class="mySlides mySlide1 slidefade">
+            <img
+              src="./images/banner1.png"
+              alt="banner"
+              width="100%"
+              class="img-feature"
+            />
+          </div>
+
+          <div class="mySlides mySlide2 slidefade">
+            <img
+              src="./images/banner2.jpg"
+              alt="banner"
+              width="100%"
+              class="img-feature"
+            />
+          </div>
+
+          <div class="mySlides mySlide3 slidefade">
+            <img
+              src="./images/banner3.png"
+              alt="banner"
+              width="100%"
+              class="img-feature"
+            />
+          </div>
+          <!--nút pre-next-->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br />
+
+        <!-- nút dots -->
+        <div style="text-align: center">
+          <span class="dot dot1" onclick="currentSlide(1)"></span>
+          <span class="dot dot2" onclick="currentSlide(2)"></span>
+          <span class="dot dot3" onclick="currentSlide(3)"></span>
+        </div>
+      </section>
+
+      <section class="main">
+        <!--sidebar-->
+        <div class="main__sidebar">
+          <div id="btnOpenSidebar" class="main__sidebar--close">
+            <button class="btn btn-primary" onclick="openNav()">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+
+          <div id="mySidebar" class="main__sidebar--open">
+            <div class="main__sidebar__header">
+              <i class="fa-solid fa-bars"></i>
+              <span>BỘ LỌC</span>
+              <a
+                href="javascript:void(0)"
+                class="closebtn"
+                onclick="closeNav()"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </a>
+            </div>
+
+            <ul>
+              <li class="price">
+                <a href="#">Giá</a>
+                <ul>
+                  <li><input type="checkbox" />Tất cả</li>
+                  <li><input type="checkbox" />Nhỏ hơn 500.000đ</li>
+                  <li><input type="checkbox" />Từ 500.000đ - 1.000.000đ</li>
+                  <li><input type="checkbox" />Từ 1.000.000đ - 2.500.000đ</li>
+                  <li><input type="checkbox" />Từ 2.500.000đ - 4.000.000đ</li>
+                  <li><input type="checkbox" />Lớn hơn 4.000.000đ</li>
+                </ul>
+              </li>
+              <li class="brand"><a href="#">Thương hiệu</a></li>
+              <li class="type"><a href="#">Loại</a></li>
+              <li class="material"><a href="#">Chất liệu</a></li>
+              <li class="size"><a href="#">Kích cỡ</a></li>
+              <li class="sleeve"><a href="#">Kiểu tay áo</a></li>
+              <li class="color"><a href="#">Màu sắc</a></li>
+              <li class="style"><a href="#">Phong cách</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- body area -->
+        <div class="main__stall">
+          <div>
+            <h1>NEW ARRIVAL</h1>
+          </div>
+          <div class="main__stall_products row">
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh1.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh1b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">ĐẦM MAXI VOAN HOA HỒNG CA CỔ YẾM</a>
+              </div>
+              <div class="card-footer">2.298.000 VND</div>
+            </div>
+
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh2.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh2b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">ĐẦM HỒNG SÁT NÁCH BÈO THÂN SAU</a>
+              </div>
+              <div class="card-footer">2.098.000 VND</div>
+            </div>
+
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh3.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh3b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">CHÂN VÁY TAFTA HOA NỀN HỒNG TÍM XẾP LY</a>
+              </div>
+              <div class="card-footer">1.498.000 VND</div>
+            </div>
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh4.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh4b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">QUẦN JEANS SUÔNG GÂN GIỮA</a>
+              </div>
+              <div class="card-footer">1.298.000 VND</div>
+            </div>
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh5.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh5b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">ĐẦM MAXI VOAN HOA NỀN HỒNG TÍM BUỘC NƠ SAU</a>
+              </div>
+              <div class="card-footer">2.298.000 VND</div>
+            </div>
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh6.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh6b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">GILE BE SỮA ĐAI EO </a>
+              </div>
+              <div class="card-footer">1.598.000 VND</div>
+            </div>
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh7.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh7b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">SƠ MI TƠ HỒNG CỔ ĐỨC + CÀ VẠT</a>
+              </div>
+              <div class="card-footer">1.298.000 VND</div>
+            </div>
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh8.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh8b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">ĐẦM SUÔNG HỒNG CỔ ĐÍNH CƯỜM</a>
+              </div>
+              <div class="card-footer">2.298.000 VND</div>
+            </div>
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh9.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh9b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">ĐẦM TƠ HỒNG BẤU LY TRƯỚC</a>
+              </div>
+              <div class="card-footer">2.298.000 VND</div>
+            </div>
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh10.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh10b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">ĐẦM HỒNG TÍM ĐAI EO ĐÍNH HOA</a>
+              </div>
+              <div class="card-footer">2.298.000 VND</div>
+            </div>
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh11.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh11b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">ĐẦM TƠ HOA NỀN HỒNG TÍM</a>
+              </div>
+              <div class="card-footer">2.298.000 VND</div>
+            </div>
+            <div class="item col-sm-6 col-md-4 col-xl-3">
+              <div class="card-image">
+                <img
+                  src="./images/anh12.jpg"
+                  class="card-header card-header-front"
+                />
+                <img
+                  src="./images/anh12b.jpg"
+                  class="card-header card-header-back"
+                />
+              </div>
+              <div class="card-body">
+                <a href="#">ÁO VOAN NHĂN HỒNG TRỄ VAI ĐÍNH HOA</a>
+              </div>
+              <div class="card-footer">1.198.000 VND</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__top">
+          <div class="footer__top__left">
+            <img src="./images/logo2.png" alt="logo" width="200px" />
+            <div>Địa chỉ: 180 Cao Lỗ, Phường 4, Quận 8, Tp.HCM</div>
+            <div>SĐT: 0909.333.888</div>
+            <div>Email: <a href="#">fatstore-fashion@gmail.com</a></div>
+          </div>
+          <div class="footer__top__middle">
+            <div class="footer__top__middle__title">Hỗ trợ</div>
+            <div class="footer__top__middle__content row">
+              <ul class="col-6 col1">
+                <li><a href="#">Về chúng tôi</a></li>
+                <li><a href="#">Về cửa hàng của chúng tôi</a></li>
+                <li><a href="#">Mua sắm an toàn</a></li>
+                <li><a href="#">Thông tin giao dịch</a></li>
+                <li><a href="#">Bảo mật</a></li>
+                <li><a href="#">Hồ sơ trang web</a></li>
+              </ul>
+              <ul class="col-6 col2">
+                <li><a href="#">Chúng tôi là ai ?</a></li>
+                <li><a href="#">Dịch vụ của chúng tôi</a></li>
+                <li><a href="#">Dự án</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Sự thay đổi</a></li>
+                <li><a href="#">Lời cảm ơn</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__top__right">
+            <div class="footer__top__right__title">
+              Trở thành thành viên của chúng tôi ngay bây giờ
+            </div>
+            <div class="footer__top__right__content">
+              Nhận thông tin mới nhất và các ưu đãi đặc biệt cập nhật qua Email
+              về cửa hàng chúng tôi trong thời gian sớm nhất.
+            </div>
+            <div class="footer__top__right__input">
+              <input type="text" />
+              <button class="btnSignUp">Đăng ký</button>
+            </div>
+            <img src="./images/payment-item.png" alt="pay" />
+          </div>
+        </div>
+        <!-- bottom -->
+        <div class="copy-right">
+          Copyright © 2024 All rights reserved | With
+          <i class="fa-regular fa-heart"></i> by Trương Quang Phát - DH52111481
+          - D21_TH09
+        </div>
+      </footer>
+
+      <!-- Nút Quay về đầu trang -->
+      <button onclick="topFunction()" id="topBtn" title="Go to top">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
+
+      <!-- action button ----------------->
+
+      <button id="openActionBtn" onclick="openActionButton()">
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+
+      <button id="closeActionBtn" onclick="closeActionButton()">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
+
+      <div id="action-button">
+        <img src="./images/facebook_logo.png" alt="fb" />
+        <img src="./images/messenger.png" alt="mess" />
+        <img src="./images/zalo.png" alt="zalo" style="border-radius: 7px" />
+        <img src="./images/gmail.png" alt="email" />
+        <img src="./images/map_1865269.png" alt="map" />
+        <img src="./images/phone.png" alt="tel" />
+      </div>
+    </div>
+  </body>
+</html>
