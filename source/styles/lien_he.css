@@ -1,43 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-#navbarSupportedContent ul .nav-link6 {
+#navbarSupportedcontact ul .nav-link6 {
   color: #f7f0f0;
 }
 
-.content {
+.contact {
   margin: 70px 0;
   font-family: "Quicksand", sans-serif;
   font-weight: lighter;
   font-size: 16px;
 }
 
-.content__left__top {
+.contact__left__top {
   margin-bottom: 70px;
 }
 
-.content__left__top i {
+.contact__left__top i {
   width: 20px;
 }
 
-.content__left__top > div {
+.contact__left__top > div {
   line-height: 1.5;
   margin: 20px;
 }
 
-.content__left__bottom {
+.contact__left__bottom {
   margin-left: 25px;
 }
 
-.content__left__bottom > * {
+.contact__left__bottom > * {
   margin: 20px 0;
 }
 
-.content__left__bottom .title {
+.contact__left__bottom .title {
   font-weight: bold;
   font-size: 23px;
 }
 
-.content__left__bottom .inp {
+.contact__left__bottom .inp {
   height: 45px;
   width: 100%;
   max-width: 685px;
@@ -48,20 +48,20 @@
   box-shadow: none;
 }
 
-.content__left__bottom .inp:focus {
+.contact__left__bottom .inp:focus {
   outline: none;
   border: 1px solid #007bff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.content__left__bottom textarea {
+.contact__left__bottom textarea {
   resize: none;
   line-height: 1.5;
   min-height: 130px;
   padding-top: 10px !important;
 }
 
-.content__left__bottom button {
+.contact__left__bottom button {
   padding: 0 35px;
   background: rgb(251, 121, 147);
   width: 100%;
@@ -76,13 +76,13 @@
   float: right;
 }
 
-.content__left__bottom button:hover {
+.contact__left__bottom button:hover {
   border: 2px solid black;
   background-color: #007bff;
   transition: background-color 0.5s ease-in-out;
 }
 
-.content__right {
+.contact__right {
   box-sizing: border-box;
   padding: 40px;
   min-height: 600px;

@@ -2,10 +2,6 @@
   border: 1px solid rgb(212, 201, 201);
 }
 
-#navbarSupportedContent ul .nav-link1 {
-  color: #f7f0f0;
-}
-
 .main {
   display: flex;
   width: 100%;
@@ -118,6 +114,7 @@
 
 /* hiệu ứng cho card-img ----------------------------------------------*/
 
+/*card-image: Phần bao quanh hình ảnh*/
 .card-image {
   cursor: pointer;
   position: relative;
@@ -127,7 +124,7 @@
   border-bottom-left-radius: 25px;
   transition: all 1s;
   width: 250px;
-  height: 325.6px;
+  height: 364.69px;
 }
 
 .card-image:after,
@@ -163,7 +160,7 @@
 .card-image:hover:before,
 .card-image:hover:after {
   width: 260px;
-  height: 340px;
+  height: 380px;
 }
 
 .main__stall_products .item img {
@@ -219,6 +216,7 @@
   font-weight: lighter;
   justify-content: start;
   text-decoration: underline;
+  color: #fd2c18;
 }
 
 @media screen and (max-width: 576px) {

@@ -1,0 +1,165 @@
+<header class="header">
+  <div class="header__top">
+    <div class="header__top__left">
+      <i class="fa-regular fa-envelope"></i
+      ><a href="#">fatstore-fashion@gmail.com</a>
+    </div>
+    <div class="header__top__right">
+      <!--icon mxh-->
+      <div class="header__top__right__social">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+      <div class="header__top__right__language">
+        <div>Việt Nam<i class="fa-solid fa-angle-down"></i></div>
+        <ul class="header__top__right__language__list">
+          <li><a href="#">Spanis</a></li>
+          <li><a href="#">English</a></li>
+        </ul>
+      </div>
+      <div class="header__top__right__auth">
+        <a href="subpages/account.html">
+          <i class="fa fa-user"></i>
+          Tài khoản
+        </a>
+      </div>
+      <!--Tạo nút menu khi reponsive, sủ dụng canvas Bootstrap-->
+      <div class="header__top__right__menu">
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+          style="background-color: #f0e0e0; color: black; border: none"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Chức năng</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!--Hiển thị các chức năng trong menu-->
+          <div class="offcanvas-body">
+            <div>
+              <div class="header__top__right__menu__auth">
+                <a href="subpages/lien_he.html" style="line-height: 2">
+                  <i class="fa fa-user"></i>Tài khoản
+                </a>
+              </div>
+              <div class="header__top__right__menu__language">
+                <div>
+                  <i class="fa-solid fa-language"></i
+                  ><a href="#" style="line-height: 2">Ngôn ngữ</a
+                  ><i class="fa-solid fa-angle-down"></i>
+                </div>
+                <ul
+                  class="header__top__right__menu__language__list"
+                  style="line-height: 1.5"
+                >
+                  <li>
+                    <a href="#">Việt Nam <i class="fa-solid fa-check"></i></a>
+                  </li>
+                  <li><a href="#">Spanis</a></li>
+                  <li><a href="#">English</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <!--logo-->
+    <div class="header__bottom__left">
+      <img src="./images/logo.png" alt="logo" width="200px" />
+    </div>
+    <div class="header__bottom__right">
+      <!--Thanh tìm kiếm-->
+      <div class="header__bottom__right__search">
+        <input type="text" placeholder="Nhập thông tin..." class="textbox" />
+        <i class="fa fa-magnifying-glass"></i>
+      </div>
+      <!--hotline-->
+      <div class="header__bottom__right__hotline">
+        <i class="fa-solid fa-phone" style="color: #cca929"></i>
+        <div>
+          <div class="sdt">0909.333.888</div>
+          <div class="text">Hỗ trợ 24/7</div>
+        </div>
+      </div>
+
+      <!--cart-->
+      <div class="header__bottom__right__cart">
+        <i class="fa-solid fa-cart-shopping" style="color: #cca929"></i>
+        <div class="num">15</div>
+      </div>
+    </div>
+  </div>
+
+  <!--navigation sử dụng bootstrap-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link1 homeNavItem"
+              href="../index.php?mod=home"
+              >TRANG CHỦ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link2 saleNavItem" href="#">SALE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link3 productNavItem" href="#">SẢN PHẨM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link4 collectionNavItem" href="#"
+              >BỘ SƯU TẬP</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-link5 supportNavItem" href="#">HỖ TRỢ</a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link nav-link6 contactNavItem"
+              href="../index.php?mod=contact"
+              >LIÊN HỆ</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

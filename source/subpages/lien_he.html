@@ -1,305 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Liên hệ | Fat Store</title>
-
-    <!--font---------------------------------->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap"
-      rel="stylesheet"
-    />
-
-    <!--CSS----------------------------------->
-    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="../styles/fontawesome-free-6.5.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/lien_he.css" />
-
-    <!-- script ------------------------------>
-    <script
-      type="text/javascript"
-      src="../scripts/bootstrap.bundle.min.js"
-    ></script>
-    <script type="text/javascript" src="../scripts/all_page.js"></script>
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__top">
-        <div class="header__top__left">
-          <i class="fa-regular fa-envelope"></i
-          ><a href="#">fatstore-fashion@gmail.com</a>
-        </div>
-        <div class="header__top__right">
-          <!--icon mxh-->
-          <div class="header__top__right__social">
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-whatsapp"></i>
-          </div>
-          <div class="header__top__right__language">
-            <div>Việt Nam<i class="fa-solid fa-angle-down"></i></div>
-            <ul class="header__top__right__language__list">
-              <li><a href="#">Spanis</a></li>
-              <li><a href="#">English</a></li>
-            </ul>
-          </div>
-          <div class="header__top__right__auth">
-            <a href="account.html">
-              <i class="fa fa-user"></i>
-              Tài khoản
-            </a>
-          </div>
-          <!--Tạo nút menu khi reponsive, sủ dụng canvas Bootstrap-->
-          <div class="header__top__right__menu">
-            <button
-              class="btn btn-primary"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight"
-              style="background-color: #f0e0e0; color: black; border: none"
-            >
-              <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <div
-              class="offcanvas offcanvas-end"
-              tabindex="-1"
-              id="offcanvasRight"
-              aria-labelledby="offcanvasRightLabel"
-            >
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">
-                  Chức năng
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <!--Hiển thị các chức năng trong menu-->
-              <div class="offcanvas-body">
-                <div>
-                  <div class="header__top__right__menu__auth">
-                    <a href="account.html" style="line-height: 2">
-                      <i class="fa fa-user"></i>Tài khoản
-                    </a>
-                  </div>
-                  <div class="header__top__right__menu__language">
-                    <div>
-                      <i class="fa-solid fa-language"></i
-                      ><a href="#" style="line-height: 2">Ngôn ngữ</a
-                      ><i class="fa-solid fa-angle-down"></i>
-                    </div>
-                    <ul
-                      class="header__top__right__menu__language__list"
-                      style="line-height: 1.5"
-                    >
-                      <li>
-                        <a href="#"
-                          >Việt Nam <i class="fa-solid fa-check"></i
-                        ></a>
-                      </li>
-                      <li><a href="#">Spanis</a></li>
-                      <li><a href="#">English</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<section class="content row">
+  <div class="content__left col-lg-4 col-md-12">
+    <div class="content__left__top">
+      <div class="address">
+        <i class="fa-solid fa-location-dot"></i>
+        180 Cao Lỗ, Phường 4, Quận 8, Tp.HCM
       </div>
-      <div class="header__bottom">
-        <!--logo-->
-        <div class="header__bottom__left">
-          <img src="../images/logo.png" alt="logo" width="200px" />
-        </div>
-        <div class="header__bottom__right">
-          <!--Thanh tìm kiếm-->
-          <div class="header__bottom__right__search">
-            Tìm kiếm
-            <input
-              type="text"
-              placeholder="Nhập thông tin..."
-              class="textbox"
-            />
-            <i class="fa fa-magnifying-glass"></i>
-          </div>
-          <!--hotline-->
-          <div class="header__bottom__right__hotline">
-            <i class="fa-solid fa-phone" style="color: #cca929"></i>
-            <div>
-              <div class="sdt">0909.333.888</div>
-              <div class="text">Hỗ trợ 24/7</div>
-            </div>
-          </div>
-        </div>
+      <div class="phone-nuber">
+        <i class="fa-solid fa-mobile"></i>
+        0909.333.888
       </div>
-
-      <!--navigation sử dụng bootstrap-->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link nav-link1" href="../index.html">TRANG CHỦ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link2" href="#">SALE</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link3" href="#">SẢN PHẨM</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link4" href="#">BỘ SƯU TẬP</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link nav-link5" href="#">HỖ TRỢ</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link nav-link6" href="lien_he.html">LIÊN HỆ</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <section class="content row">
-      <div class="content__left col-lg-4 col-md-12">
-        <div class="content__left__top">
-          <div class="address">
-            <i class="fa-solid fa-location-dot"></i>
-            180 Cao Lỗ, Phường 4, Quận 8, Tp.HCM
-          </div>
-          <div class="phone-nuber">
-            <i class="fa-solid fa-mobile"></i>
-            0909.333.888
-          </div>
-          <div class="email">
-            <i class="fa-regular fa-envelope"></i>
-            fatstore-fashion@gmail.com
-          </div>
-        </div>
-        <div class="content__left__bottom">
-          <div class="title">Liên hệ với chúng tôi</div>
-          <input type="text" name="name" placeholder="Họ và tên" class="inp" />
-          <br />
-          <input type="text" name="email" placeholder="Email" class="inp" />
-          <br />
-          <textarea
-            name="content"
-            placeholder="Nội dung"
-            class="inp"
-          ></textarea>
-          <br />
-          <button>Gửi liên hệ</button>
-        </div>
+      <div class="email">
+        <i class="fa-regular fa-envelope"></i>
+        fatstore-fashion@gmail.com
       </div>
-      <div class="content__right col-lg-8 col-md-12">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9540679030492!2d106.67528531125248!3d10.738023589364264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fad027e3727%3A0x2a77b414e887f86d!2zMTgwIMSQLiBDYW8gTOG7lywgUGjGsOG7nW5nIDQsIFF14bqtbiA4LCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1717360156956!5m2!1svi!2s"
-          width="100%"
-          height="100%"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </section>
-    <footer class="footer">
-      <div class="footer__top">
-        <div class="footer__top__left">
-          <img src="../images/logo2.png" alt="logo" width="200px" />
-          <div>Địa chỉ: 180 Cao Lỗ, Phường 4, Quận 8, Tp.HCM</div>
-          <div>SĐT: 0909.333.888</div>
-          <div>Email: <a href="#">fatstore-fashion@gmail.com</a></div>
-        </div>
-        <div class="footer__top__middle">
-          <div class="footer__top__middle__title">Hỗ trợ</div>
-          <div class="footer__top__middle__content row">
-            <ul class="col-6 col1">
-              <li><a href="#">Về chúng tôi</a></li>
-              <li><a href="#">Về cửa hàng của chúng tôi</a></li>
-              <li><a href="#">Mua sắm an toàn</a></li>
-              <li><a href="#">Thông tin giao dịch</a></li>
-              <li><a href="#">Bảo mật</a></li>
-              <li><a href="#">Hồ sơ trang web</a></li>
-            </ul>
-            <ul class="col-6 col2">
-              <li><a href="#">Chúng tôi là ai ?</a></li>
-              <li><a href="#">Dịch vụ của chúng tôi</a></li>
-              <li><a href="#">Dự án</a></li>
-              <li><a href="#">Liên hệ</a></li>
-              <li><a href="#">Sự thay đổi</a></li>
-              <li><a href="#">Lời cảm ơn</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__top__right">
-          <div class="footer__top__right__title">
-            Trở thành thành viên của chúng tôi ngay bây giờ
-          </div>
-          <div class="footer__top__right__content">
-            Nhận thông tin mới nhất và các ưu đãi đặc biệt cập nhật qua Email về
-            cửa hàng chúng tôi trong thời gian sớm nhất.
-          </div>
-          <div class="footer__top__right__input">
-            <input type="text" />
-            <button class="btnSignUp">Đăng ký</button>
-          </div>
-          <img src="../images/payment-item.png" alt="pay" />
-        </div>
-      </div>
-      <div class="copy-right">
-        Copyright © 2024 All rights reserved | With
-        <i class="fa-regular fa-heart"></i> by Trương Quang Phát - DH52111481 -
-        D21_TH09
-      </div>
-    </footer>
-    <!-- Nút Quay về đầu trang -->
-    <button onclick="topFunction()" id="topBtn" title="Go to top">
-      <i class="fa-solid fa-chevron-up"></i>
-    </button>
-
-    <!-- action button ----------------->
-    <button id="openActionBtn" onclick="openActionButton()">
-      <i class="fa-solid fa-chevron-down"></i>
-    </button>
-
-    <button id="closeActionBtn" onclick="closeActionButton()">
-      <i class="fa-solid fa-chevron-up"></i>
-    </button>
-
-    <div id="action-button">
-      <img src="../images/facebook_logo.png" alt="fb" />
-      <img src="../images/messenger.png" alt="mess" />
-      <img src="../images/zalo.png" alt="zalo" style="border-radius: 7px" />
-      <img src="../images/gmail.png" alt="email" />
-      <img src="../images/map_1865269.png" alt="map" />
-      <img src="../images/phone.png" alt="tel" />
     </div>
-  </body>
-</html>
+    <div class="content__left__bottom">
+      <div class="title">Liên hệ với chúng tôi</div>
+      <input type="text" name="name" placeholder="Họ và tên" class="inp" />
+      <br />
+      <input type="text" name="email" placeholder="Email" class="inp" />
+      <br />
+      <textarea name="content" placeholder="Nội dung" class="inp"></textarea>
+      <br />
+      <button>Gửi liên hệ</button>
+    </div>
+  </div>
+  <div class="content__right col-lg-8 col-md-12">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9540679030492!2d106.67528531125248!3d10.738023589364264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fad027e3727%3A0x2a77b414e887f86d!2zMTgwIMSQLiBDYW8gTOG7lywgUGjGsOG7nW5nIDQsIFF14bqtbiA4LCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1717360156956!5m2!1svi!2s"
+      width="100%"
+      height="100%"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</section>

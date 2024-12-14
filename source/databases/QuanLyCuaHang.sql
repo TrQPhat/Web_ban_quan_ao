@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `quanlycuahang`
+-- Cơ sở dữ liệu: `dbquanlycuahang`
 --
 
 DROP DATABASE IF EXISTS `dbquanlycuahang`;
@@ -225,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `taikhoan` (
   `quyen` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_khachhang` (`makh`)
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -292,10 +292,7 @@ ALTER TABLE `TONKHO`
 	ADD CONSTRAINT `FK_TONKHO_SANPHAM` FOREIGN KEY (`masp`) REFERENCES `SANPHAM`(`masp`) ON DELETE CASCADE ON UPDATE CASCADE,
 	ADD CONSTRAINT `FK_TONKHO_SIZE` FOREIGN KEY (`masize`) REFERENCES `SIZE`(`masize`) ON DELETE CASCADE ON UPDATE CASCADE;
 
--- 
--- Bảng `TAIKHOAN`
---
-
+/*Bảng `TAIKHOAN`*/
 ALTER TABLE `TAIKHOAN`
 	ADD CONSTRAINT `FK_TAIKHOAN_KHACHHANG` FOREIGN KEY (`makh`) REFERENCES `KHACHHANG`(`makh`) ON DELETE CASCADE ON UPDATE CASCADE;
 

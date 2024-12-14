@@ -125,6 +125,7 @@ i {
 .header__bottom {
   display: flex;
   margin: 30px 20px 60px;
+  flex-wrap: wrap;
 }
 
 .header__bottom__left {
@@ -149,9 +150,9 @@ i {
 .header__bottom__right__search {
   border: 2px solid rgb(188, 5, 35);
   border-radius: 100px;
-  padding: 0 5px 0 20px;
+  padding: 0 10px 0 10px;
   height: 50px;
-  min-width: 200px;
+  min-width: 150px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -164,9 +165,9 @@ i {
   border-radius: 10px;
   height: 25px;
   width: 335px;
-  min-width: 100px;
+  min-width: 70px;
   padding: 0 15px;
-  margin: 0 15px;
+  margin: 0 5px;
   background-color: #f9f4f4;
 }
 
@@ -178,11 +179,13 @@ i {
 .header__bottom__right__hotline {
   display: flex;
   justify-content: flex-end;
+  margin: 0 30dx;
 }
 
 .header__bottom__right__hotline i {
   height: 50px;
   width: 50px;
+  margin-left: 15px;
   margin-right: 10px;
   border-radius: 50%;
   background-color: white;
@@ -201,6 +204,45 @@ i {
   font-size: 14px;
   color: deeppink;
   font-weight: lighter;
+}
+
+.header__bottom__right__cart {
+  position: relative;
+  display: inline-block; /* Đảm bảo thẻ bao quanh thẻ con */
+}
+
+.header__bottom__right__cart i {
+  height: 50px;
+  width: 50px;
+  margin-left: 15px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.header__bottom__right__cart .num {
+  font-size: 13px;
+  color: white;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -5px; /* Đặt số thông báo lên trên góc */
+  right: -5px; /* Căn chỉnh sang phải */
+  z-index: 2;
+}
+
+.header__bottom__right__cart:hover {
+  transform: scale(1.1); /* Phóng to 10% khi rê chuột */
 }
 
 .banner {
@@ -516,29 +558,19 @@ i {
   }
 }
 
+@media screen and (max-width: 630px) {
+  .header__bottom__right__hotline {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 857px) {
   .header__bottom {
     display: block;
   }
 
-  .header__bottom img {
-    position: relative;
-    margin: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-  }
-
-  .header__bottom__right {
-    margin-top: 30px;
-  }
-
   .header__bottom__right__search {
     position: relative;
-  }
-
-  .header__bottom__right__hotline {
-    display: none;
   }
 
   .footer__top {
@@ -555,5 +587,23 @@ i {
 
   .copy-right {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 957px) {
+  .header__bottom__left {
+    flex: 1 100%;
+  }
+
+  .header__bottom__right {
+    margin-top: 30px;
+  }
+
+  .header__bottom img {
+    position: relative;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
   }
 }
