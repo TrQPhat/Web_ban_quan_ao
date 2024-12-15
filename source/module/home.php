@@ -1,6 +1,6 @@
 <!-- banner -->
 <?php 
-    include "include/banner.html" ; 
+    include "include/banner.php" ; 
     $query = "SELECT COUNT(*) AS num
             FROM (
             SELECT sp.masp
@@ -48,11 +48,13 @@
 
             <div class="item col-sm-6 col-md-4 col-xl-3">
                 <div class="card-image">
-                    <img src="<?php echo "./images/".$images[0]['ten'] ?>" class="card-header card-header-front" />
-                    <img src="<?php echo "./images/".$images[1]['ten'] ?>" class="card-header card-header-back" />
+                    <img src="<?php echo "./images/products/".$images[0]['ten'] ?>"
+                        class="card-header card-header-front" />
+                    <img src="<?php echo "./images/products/".$images[1]['ten'] ?>"
+                        class="card-header card-header-back" />
                 </div>
                 <div class="card-body">
-                    <a href="#"><?php echo $sp['tensp'] ?></a>
+                    <a href="../index.php?mod=product_detail"><?php echo $sp['tensp'] ?></a>
                 </div>
                 <div class="card-footer">
                     <?php echo number_format(

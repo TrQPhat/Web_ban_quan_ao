@@ -88,12 +88,12 @@
         </button>
 
         <div id="action-button">
-            <img src="./images/facebook_logo.png" alt="fb" />
-            <img src="./images/messenger.png" alt="mess" />
-            <img src="./images/zalo.png" alt="zalo" style="border-radius: 7px" />
-            <img src="./images/gmail.png" alt="email" />
-            <img src="./images/map_1865269.png" alt="map" />
-            <img src="./images/phone.png" alt="tel" />
+            <img src="./images/logo/facebook_logo.png" alt="fb" />
+            <img src="./images/logo/messenger.png" alt="mess" />
+            <img src="./images/logo/zalo.png" alt="zalo" style="border-radius: 7px" />
+            <img src="./images/logo/gmail.png" alt="email" />
+            <img src="./images/logo/map_1865269.png" alt="map" />
+            <img src="./images/logo/phone.png" alt="tel" />
         </div>
     </div>
 </body>
