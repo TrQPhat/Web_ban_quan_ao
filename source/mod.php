@@ -5,4 +5,10 @@
     } else if ($mod == 'contact'){
         include "module/contact.html";
     }
+    else if ($mod == 'account'){
+        ob_clean();
+        header("Location: module/account.html");
+        ob_end_flush();
+        exit();
+    }
 ?>

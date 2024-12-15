@@ -1,3 +1,10 @@
+<?php 
+    include "config/config.php";
+    include "include/function.php";
+    if (!isset($_SESSION)) session_start();
+    spl_autoload_register("loadClass");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +22,7 @@
     <link rel="stylesheet" href="styles/page_preloader.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/pagination.css" />
 
     <!--Script-------------------------->
     <script type="text/javascript" src="scripts/slideshow.js"></script>
@@ -37,6 +45,8 @@
     #navbarSupportedContent ul <?php echo '.'.$mod.'NavItem'?> {
         color: #f7f0f0;
     }
+
+    /* mặc kệ, không có vấn đề gì */
     </style>
 
     <title> <?php echo $title; unset($title) ?> | Fat Store</title>
@@ -54,9 +64,11 @@
 
     <div class="content" id="content">
         <?php 
+            ob_start();
             include "include/header.html" ;
             include "mod.php";
             include "include/footer.html"; 
+            ob_end_flush();
         ?>
 
         <!-- Nút Quay về đầu trang -->

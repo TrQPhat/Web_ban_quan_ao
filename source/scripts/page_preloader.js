@@ -1,16 +1,14 @@
 window.addEventListener("load", function () {
-  //đặt thời gian tắt pre loader 2.5s (cộng thêm hiệu ứng phụ xấp xỉ 3s)
-
-  //hiệu ứng mờ dần
-  this.setTimeout(function () {
-    this.document.getElementById("preLoader").style.opacity = 0.4;
-  }, 2200);
-
+  // Đặt thời gian tắt preloader và thực hiện hiệu ứng mờ dần
   setTimeout(function () {
-    //tắt đối tượng pre loader
-    this.document.getElementById("preLoader").style.display = "none";
+    const preLoader = document.getElementById("preLoader");
+    preLoader.style.opacity = 0; // Mờ hoàn toàn
+    preLoader.style.transition = "opacity 0.5s ease-out"; // Hiệu ứng mờ dần (1 giây)
 
-    //hiển thị nội dung trang web
-    document.getElementsByClassName("content")[0].style.display = "block";
-  }, 2700);
+    // Lắng nghe khi hiệu ứng mờ dần hoàn tất
+    preLoader.addEventListener("transitionend", function () {
+      preLoader.style.display = "none"; // Tắt preloader hoàn toàn
+      document.querySelector(".content").style.display = "block"; // Hiển thị nội dung chính
+    });
+  }, 500); // Chờ 2 giây trước khi bắt đầu hiệu ứng
 });

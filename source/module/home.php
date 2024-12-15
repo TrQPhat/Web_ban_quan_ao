@@ -1,5 +1,11 @@
 <!-- banner -->
-<?php include "include/banner.html" ; ?>
+<?php 
+    include "include/banner.html" ; 
+    // Tổng số trang
+    $totalPages = 3;
+    // Trang hiện tại
+    $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+?>
 
 
 <section class="main">
@@ -137,4 +143,9 @@
             </div>
         </div>
     </div>
+
 </section>
+
+<?php 
+    include "include/pagination.php";
+?>

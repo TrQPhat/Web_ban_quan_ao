@@ -97,7 +97,7 @@ function submitSignUp() {
   event.preventDefault(); //ngăn sự kiện
 
   //validate đúng, chuyển hướng tới trang chủ
-  if (validateValue()) window.location.href = "../index.html";
+  if (validateValue()) window.location.href = "../index.php";
 }
 
 //sự kiện khi click nút hoàn tất đăng nhập
@@ -124,5 +124,5 @@ function submitLogin() {
   }
 
   //tất cả đúng quay về trang chủ
-  window.location.href = "../index.html";
+  window.location.href = "../index.php";
 }
