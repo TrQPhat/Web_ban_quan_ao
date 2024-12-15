@@ -10,7 +10,7 @@
         include "module/product.php";
     }
     else if ($mod == 'product_detail'){
-        include "module/product_detail.html";
+        include "module/product_detail.php";
     }
     else if ($mod == 'account'){
         ob_clean();

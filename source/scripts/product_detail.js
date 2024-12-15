@@ -1,78 +1,47 @@
-document.getElementById("decrease").addEventListener("click", function () {
-  let quantity = document.getElementById("quantity");
-  if (parseInt(quantity.value) > 1) {
-    quantity.value = parseInt(quantity.value) - 1;
-  }
-});
+// Biến toàn cục để theo dõi slide hiện tại
+let currentIndex = 0;
 
-document.getElementById("increase").addEventListener("click", function () {
-  let quantity = document.getElementById("quantity");
-  quantity.value = parseInt(quantity.value) + 1;
-});
+// Lấy tất cả các slide và dot
+const images = document.getElementsByClassName("slide-image");
+const dot1s = document.getElementsByClassName("dot");
 
-// Lấy tất cả các slide và các nút điều khiển
-const slides = document.querySelectorAll(".slide"); // Chỉnh sửa lại selector nếu cần
-const prevButton = document.querySelector(".prev");
-const nextButton = document.querySelector(".next");
-const dots = document.querySelectorAll(".dot");
-
-// Biến để theo dõi slide hiện tại
-let currentSlide = 0;
-
-// Hàm hiển thị slide hiện tại
-function showSlide(index) {
-  // Đảm bảo index hợp lệ
-  if (index >= slides.length) {
-    currentSlide = 0;
+// Hàm để hiển thị slide hiện tại
+function showImage(index) {
+  // Đảm bảo rằng index hợp lệ
+  if (index >= images.length) {
+    currentIndex = 0;
   } else if (index < 0) {
-    currentSlide = slides.length - 1;
+    currentIndex = images.length - 1;
   } else {
-    currentSlide = index;
+    currentIndex = index;
   }
 
   // Ẩn tất cả các slide
-  slides.forEach((slide, i) => {
-    slide.classList.remove("active"); // Ẩn slide
-    slide.classList.add(i === currentSlide ? "active" : ""); // Hiển thị slide hiện tại
-  });
+  for (let i = 0; i < images.length; i++) {
+    images[i].style.display = "none";
+  }
 
-  // Cập nhật các dot
-  dots.forEach((dot, i) => {
-    dot.classList.remove("active"); // Ẩn dot
-    if (i === currentSlide) {
-      dot.classList.add("active"); // Hiển thị dot của slide hiện tại
-    }
-  });
+  // Ẩn tất cả các dot
+  for (let i = 0; i < dot1s.length; i++) {
+    dot1s[i].className = dot1s[i].className.replace(" selected", "");
+  }
+
+  // Hiển thị slide hiện tại
+  images[currentIndex].style.display = "block";
+
+  // Đánh dấu dot của slide hiện tại là active
+  dot1s[currentIndex].className += " selected";
 }
 
-// Hàm chuyển đến slide tiếp theo
-function nextSlide() {
-  showSlide(currentSlide + 1);
+// Hàm thay đổi slide khi nhấn nút prev hoặc next
+function changeImage(direction) {
+  showImage(currentIndex + direction);
 }
 
-// Hàm chuyển đến slide trước
-function prevSlide() {
-  showSlide(currentSlide - 1);
+// Hàm thay đổi slide khi nhấn vào dot
+function currentImage(index) {
+  showImage(index); // Bởi vì index bắt đầu từ 0
 }
 
-// Hàm tự động chuyển slide
-function autoSlide() {
-  setInterval(nextSlide, 5000); // Chuyển slide mỗi 5 giây
-}
-
-// Thêm sự kiện click cho nút prev và next
-prevButton.addEventListener("click", prevSlide);
-nextButton.addEventListener("click", nextSlide);
-
-// Thêm sự kiện click cho các dot
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    showSlide(index);
-  });
-});
-
-// Bắt đầu auto slide
-autoSlide();
-
-// Hiển thị slide đầu tiên khi load trang
-showSlide(currentSlide);
+// Hiển thị slide đầu tiên khi tải trang
+showImage(currentIndex);

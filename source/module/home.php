@@ -54,9 +54,11 @@
                         class="card-header card-header-back" />
                 </div>
                 <div class="card-body">
-                    <a href="../index.php?mod=product_detail"><?php echo $sp['tensp'] ?></a>
+                    <?php 
+                       echo '<a href="../index.php?mod=product_detail&id='.$sp['masp'].'">'.$sp['tensp'].'</a>';
+                    ?>
                 </div>
-                <div class="card-footer">
+                <div class=" card-footer">
                     <?php echo number_format(
                             $sp['giaban'] , 
                             0, 
@@ -74,5 +76,6 @@
 </section>
 
 <?php 
+    unset($totalPages, $currentPage, $query, $images, $listOfProducts, $offset);
     include "include/pagination.php";
 ?>

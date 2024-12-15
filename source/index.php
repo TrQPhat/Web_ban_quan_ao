@@ -37,9 +37,12 @@
         $title = "Trang chủ";
         if ($mod == "contact") {
             $title = "Liên hệ";
-            echo '<link rel="stylesheet" href="../styles/lien_he.css" />';
+            echo '<link rel="stylesheet" href="styles/lien_he.css" />';
         }
         else if ($mod == "account") $title = "Tài khoản";
+        else if ($mod == "product_detail"){
+            $title = "Chi tiết";
+        }
      ?>
 
     <style>
