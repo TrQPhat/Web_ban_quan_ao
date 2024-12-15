@@ -2,6 +2,7 @@
 :root {
   --main-color: black;
   --main-font: "Oswald";
+  --selectedNav: #ffc971;
 }
 
 * {
@@ -272,19 +273,37 @@ i {
   margin: 0 10px;
 }
 
+#navbarSupportedContent ul li a:hover {
+  color: var(--selectedNav);
+}
+
 #navbarSupportedContent ul li::before {
   content: "";
   position: absolute;
   width: 0;
   height: 3px;
   bottom: 0;
-  left: 0;
-  background-color: black;
+  left: 49%;
+  background-color: var(--selectedNav);
   transition: width 0.3s ease;
 }
 
+#navbarSupportedContent ul li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  right: 49%;
+  background-color: var(--selectedNav);
+  transition: width 0.3s ease;
+}
+#navbarSupportedContent > ul li:hover::after {
+  width: 51%;
+}
+
 #navbarSupportedContent > ul li:hover::before {
-  width: 100%;
+  width: 51%;
 }
 
 /* footer - begin ----------------------- */

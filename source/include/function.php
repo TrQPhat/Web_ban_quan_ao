@@ -1,7 +1,7 @@
 <?php
 function loadClass($c)
 {
-	include ROOT."/classes/".$c.".class.php";
+	include ROOT."/model/".$c.".class.php";
 }
 
 function getIndex($index, $value='none')

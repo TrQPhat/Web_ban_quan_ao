@@ -6,7 +6,7 @@
             SELECT sp.masp
                 FROM sanpham sp
                 JOIN tonkho tk ON sp.masp = tk.masp
-                WHERE tk.mach = ? AND sp.ghichu = 'Sản phẩm mới'
+                WHERE tk.mach = ?
                 GROUP BY sp.masp
                 HAVING SUM(tk.soluong) > 0
             ) AS san_pham_hien_hanh;";
@@ -25,7 +25,7 @@
     <!-- body area -->
     <div class="main__stall">
         <div>
-            <h1>SẢN PHẨM MỚI</h1>
+            <h1>TOÀN BỘ SẢN PHẨM</h1>
         </div>
         <div class="main__stall_products row">
             <?php
@@ -33,7 +33,7 @@
             $query = "SELECT sp.masp, sp.tensp, sp.giaban
                 FROM sanpham sp
                 JOIN tonkho tk ON sp.masp = tk.masp
-                WHERE tk.mach = ? AND sp.ghichu = 'Sản phẩm mới'
+                WHERE tk.mach = ?
                 GROUP BY sp.masp
                 HAVING SUM(tk.soluong) > 0
                 LIMIT ".LIMIT_ITEM." OFFSET $offset";
