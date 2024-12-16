@@ -108,6 +108,19 @@
       <div class="header__bottom__right__cart">
         <i class="fa-solid fa-cart-shopping" style="color: #cca929"></i>
         <div class="num">15</div>
+
+        <!-- Dialog giỏ hàng -->
+        <div id="cartDialog" class="cart-dialog">
+          <div class="dialog-content">
+            <span class="close-btn" onclick="closeCartDialog()">&times;</span>
+            <h2>Giỏ Hàng</h2>
+            <div id="cartItems"></div>
+            <div class="dialog-footer">
+              <button onclick="closeCartDialog()">Đóng</button>
+              <button onclick="checkout()">Thanh Toán</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

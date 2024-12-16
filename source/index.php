@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/pagination.css" />
+    <link rel="stylesheet" href="../styles/cartDialog.css" />
 
     <!--Script-------------------------->
     <script type="text/javascript" src="scripts/slideshow.js"></script>
