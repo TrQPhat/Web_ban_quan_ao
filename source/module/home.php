@@ -62,8 +62,8 @@
                     <?php echo number_format(
                             $sp['giaban'] , 
                             0, 
-                            '.', 
-                            ',')
+                            ',', 
+                            '.')
                             ." VNĐ"?>
                 </div>
             </div>
@@ -76,6 +76,6 @@
 </section>
 
 <?php 
-    unset($totalPages, $currentPage, $query, $images, $listOfProducts, $offset);
     include "include/pagination.php";
+    unset($totalPages, $currentPage, $query, $images, $listOfProducts, $offset);
 ?>

@@ -110,8 +110,9 @@
 }
 
 .main__stall_products .item .card-body {
-  font-weight: lighter !important;
-  letter-spacing: 1px;
+  font-weight: 400 !important;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 /* hiệu ứng cho card-img ----------------------------------------------*/
@@ -215,7 +216,7 @@
 }
 
 .main__stall_products .item .card-footer {
-  font-weight: lighter;
+  font-weight: 400;
   justify-content: start;
   text-decoration: underline;
   color: #fd2c18;

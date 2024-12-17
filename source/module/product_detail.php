@@ -4,7 +4,6 @@
 <head>
     <link rel="stylesheet" href="styles/product_detail.css" />
     <script type="text/javascript" src="/scripts/product_detail.js"></script>
-    <script type="text/javascript" src="/scripts/inc-des.js"></script>
 </head>
 
 <body>
@@ -15,7 +14,10 @@
       $query = "SELECT soluong from tonkho
                 WHERE mach= ? AND masp = ?;";
       $sl = $db->executeQueryWithParams($query, [MA_CH, $masp]);
-      //var_dump( $sl);  echo $sl[0]['soluong'];exit;
+      
+
+      
+
     ?>
 
     <div class="product-container">
@@ -58,7 +60,7 @@
           $product = $db -> executeQueryWithParams($query, [$masp])[0];
          ?>
         <div class="product-info">
-            <h1 class="product-title"><?php echo $product['tensp']; ?></h1>
+            <h1 class="product-detail-title"><?php echo $product['tensp']; ?></h1>
             <p class="product-price">
                 <span class="old-price">1.398.000 VNĐ</span>
                 <span class="new-price"><?php echo number_format(
@@ -91,7 +93,7 @@
                     <button class="quantity-btn" id="decrease">
                         <i class="fa-solid fa-minus"></i>
                     </button>
-                    <input type="text" value="1" id="quantity" />
+                    <input type="number" value="1" id="quantity" />
                     <button class="quantity-btn" id="increase">
                         <i class="fa-solid fa-plus"></i>
                     </button>
@@ -100,7 +102,7 @@
 
             <!-- Nút chức năng -->
             <div class="product-actions">
-                <button class="btn add-to-cart">THÊM VÀO GIỎ</button>
+                <button class="btn add-to-cart" id="btn-add-to-cart" onclick="addToCart()">THÊM VÀO GIỎ</button>
                 <button class="btn add-to-wishlist">THÊM VÀO YÊU THÍCH</button>
             </div>
 
@@ -121,33 +123,7 @@
             </div>
         </div>
     </div>
-    <script>
-    document.getElementById("decrease").addEventListener("click", function() {
-        let quantity = document.getElementById("quantity");
-        if (parseInt(quantity.value) > 1) {
-            quantity.value = parseInt(quantity.value) - 1;
-        }
-    });
-
-    document.getElementById("increase").addEventListener("click", function() {
-        let quantity = document.getElementById("quantity");
-        quantity.value = parseInt(quantity.value) + 1;
-    });
-
-    let selectedSize = 2;
-
-    const btnSizes = document.getElementsByClassName("size-btn");
-
-    function resetBtnSize(i) {
-        btnSizes[i].className = btnSizes[i].className.replace(" active", "");
-    }
-
-    function changeSize(index) {
-        btnSizes[index].className += " active";
-        resetBtnSize(selectedSize);
-        selectedSize = index;
-    }
-    </script>
+    <script src="../scripts/event_productDetail.js"></script>
 </body>
 
 </html>

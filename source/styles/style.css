@@ -6,8 +6,6 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -212,7 +210,7 @@ i {
   display: inline-block; /* Đảm bảo thẻ bao quanh thẻ con */
 }
 
-.header__bottom__right__cart i {
+.header__bottom__right__cart .cart-icon {
   height: 50px;
   width: 50px;
   margin-left: 15px;
@@ -242,8 +240,12 @@ i {
   z-index: 2;
 }
 
-.header__bottom__right__cart:hover {
-  transform: scale(1.1); /* Phóng to 10% khi rê chuột */
+.header__bottom__right__cart .btn-cart:hover {
+  transform: scale(1.1);
+}
+
+.header__bottom__right__cart .btn-cart:hover ~ * {
+  display: block;
 }
 
 .banner {

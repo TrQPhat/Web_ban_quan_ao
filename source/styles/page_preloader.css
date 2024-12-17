@@ -113,15 +113,6 @@
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 #preLoader {
   position: fixed;
   width: 100vw;

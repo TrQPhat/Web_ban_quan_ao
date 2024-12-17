@@ -100,6 +100,7 @@
             <img src="./images/logo/phone.png" alt="tel" />
         </div>
     </div>
+    <script src="scripts/cartEvent.js"></script>
 </body>
 
 </html>
