@@ -4,7 +4,6 @@ include 'database.php';
 $categories = $pdo->query("SELECT * FROM loaisanpham")->fetchAll(PDO::FETCH_ASSOC);
 $brands = $pdo->query("SELECT * FROM thuonghieu")->fetchAll(PDO::FETCH_ASSOC);
 $materials = $pdo->query("SELECT * FROM chatlieu")->fetchAll(PDO::FETCH_ASSOC);
-$sizes = $pdo->query("SELECT * FROM size")->fetchAll(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $masp = $_POST['masp'];
@@ -12,8 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mota = $_POST['mota'];
     $maloai = $_POST['maloai'];
     $math = $_POST['math'];
-
-    $masize = $_POST['masize'];
     $gianhap = $_POST['gianhap'];
     $giaban = $_POST['giaban'];
 
@@ -30,15 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['edit'])) {
         // Cập nhật sản phẩm
-        $query = "UPDATE sanpham SET tensp = ?, mota = ?, maloai = ?, math = ?, masize = ?, gianhap = ?, giaban = ? WHERE masp = ?";
-        $params = [$tensp, $mota, $maloai, $math, $masize, $gianhap, $giaban, $masp];
+        $query = "UPDATE sanpham SET tensp = ?, mota = ?, maloai = ?, math = ?, gianhap = ?, giaban = ? WHERE masp = ?";
+        $params = [$tensp, $mota, $maloai, $math, $gianhap, $giaban, $masp];
 
         $stmt = $pdo->prepare($query);
         $stmt->execute($params);
-
-        // Xóa các hình ảnh cũ khỏi bảng hinhanh_sanpham
-        $pdo->prepare("DELETE FROM hinhanh_sanpham WHERE masp = ?")->execute([$masp]);
-
         // Lưu thông tin hình ảnh mới vào bảng hinhanh_sanpham
         foreach ($imageNames as $imageName) {
             $stmt = $pdo->prepare("INSERT INTO hinhanh_sanpham (masp, tenhinh) VALUES (?, ?)");
@@ -48,8 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('Sản phẩm đã được cập nhật thành công!');</script>";
     } else {
         // Thêm sản phẩm mới
-        $stmt = $pdo->prepare("INSERT INTO sanpham (masp, tensp, mota, maloai, math, masize, gianhap, giaban) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$masp, $tensp, $mota, $maloai, $math, $masize, $gianhap, $giaban]);
+        $stmt = $pdo->prepare("INSERT INTO sanpham (masp, tensp, mota, maloai, math, gianhap, giaban) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$masp, $tensp, $mota, $maloai, $math, $gianhap, $giaban]);
 
         // Lưu thông tin hình ảnh vào bảng hinhanh_sanpham
         foreach ($imageNames as $imageName) {
@@ -158,15 +151,6 @@ if (isset($_GET['edit'])) {
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">Kích cỡ:</label>
-                <select name="masize" class="form-select" required>
-                    <option value="">-- Chọn kích cỡ --</option>
-                    <?php foreach ($sizes as $size): ?>
-                        <option value="<?= $size['masize'] ?>" <?= ($editProduct['masize'] ?? '') == $size['masize'] ? 'selected' : '' ?>><?= $size['tensize'] ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="mb-3">
                 <label class="form-label">Giá nhập:</label>
                 <input type="number" name="gianhap" class="form-control" value="<?= htmlspecialchars($editProduct['gianhap'] ?? '') ?>" required>
             </div>
@@ -181,7 +165,6 @@ if (isset($_GET['edit'])) {
             <button type="submit" class="btn btn-primary"><?= $editProduct ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm' ?></button>
         </form>
     </div>
-
     <!-- Hiển thị sản phẩm -->
     <table class="table table-striped mt-4">
         <thead>
@@ -195,7 +178,7 @@ if (isset($_GET['edit'])) {
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($products as $index => $product): ?>
+            <?php foreach ($products as $product): ?>
                 <tr>
                     <td><?= htmlspecialchars($product['masp']) ?></td>
                     <td><?= htmlspecialchars($product['tensp'] ?? '') ?></td>
