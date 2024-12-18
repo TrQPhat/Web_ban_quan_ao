@@ -1,0 +1,270 @@
+.payment-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.payment-container .process-bar {
+  flex: 1 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  margin-bottom: 60px;
+  border-bottom: 2px solid #ccc;
+}
+
+.payment-container .process-bar-item {
+  color: #ccc;
+  font-weight: 400;
+  font-size: 22px;
+  border: none;
+}
+
+.payment-container form {
+  width: 100%;
+  margin-bottom: 30px;
+  /* line-height: 3; */
+  flex: 3;
+  background: none;
+}
+
+.payment-container .payment-page {
+  display: none;
+  background: none;
+  width: 100%;
+}
+
+.payment-container .payment-page.active {
+  display: block;
+}
+
+.payment-container .process-bar-item.selected {
+  color: #000;
+}
+
+.payment-container .process-bar-item i {
+  color: #dc2222 !important  ;
+}
+
+/* Phần Mua hàng không cần đăng nhập */
+
+.payment-container h4 {
+  margin-bottom: 30px;
+}
+
+.payment-container p {
+  margin: 0 0 20px 0;
+  font-weight: 350;
+  color: #666;
+}
+
+.payment-checkout input {
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.payment-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.payment-action-btn {
+  height: 45px;
+  min-width: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 10px;
+  border: 1px solid #000;
+}
+
+.payment-action-btn:hover {
+  background-color: #ebb861;
+}
+
+.next-step-btn {
+  background-color: #000;
+  color: #fff;
+}
+
+.none-email-btn {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.go-to-login-btn {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* Phần Giỏ hàng */
+.payment-container .cart-dialog {
+  display: block;
+  height: 600px;
+  position: static;
+  flex: 2;
+  margin: 0 0 0 0 !important;
+  z-index: 0;
+}
+
+.payment-container .cart-dialog #cartItems .cart-total {
+  display: none;
+}
+
+.payment-container .dialog-content {
+  height: 100%;
+  position: relative;
+}
+
+.payment-container .dialog-footer {
+  display: block !important;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 20px;
+  padding: 0 5px 0 20px;
+  width: 100%;
+}
+
+.payment-container .dialog-footer > * {
+  display: flex;
+  font-weight: 350;
+  font-size: 18px;
+}
+
+.payment-container .product-total .product-total-title {
+  flex: 1;
+}
+
+.payment-container #total-value-cart {
+  flex: 2;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.payment-container .cart-total {
+  font-size: 20px;
+  font-weight: 450;
+}
+
+.payment-container .cart-total #total-value-cart {
+  font-size: 20px;
+  font-weight: 450;
+  text-decoration: underline;
+}
+
+/* vận chuyển */
+
+.payment-transpost .information {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.payment-transpost .information .info-input {
+  display: flex !important;
+}
+
+.payment-transpost .information .info-input > * {
+  flex: 1;
+}
+
+.payment-transpost .information .info-input * > div {
+  display: flex;
+  gap: 5px;
+}
+
+.payment-transpost .information p {
+  font-weight: 350;
+}
+
+.payment-transpost .required {
+  color: red; /* Đổi màu dấu sao (tùy chọn) */
+  transform: translateY(-5px); /* Nâng dấu sao lên cao một chút */
+}
+
+.payment-transpost .information .sex {
+  display: flex;
+  align-items: center;
+}
+
+.payment-transpost .information .sex > div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.payment-page input[type="radio"] {
+  transform: scale(1.5);
+}
+
+.payment-transpost .information input {
+  border: 1px solid #000;
+}
+
+.payment-payment label {
+  margin-left: 10px;
+}
+
+.payment-page .value-input {
+  height: 35px;
+  width: 80%;
+  margin-bottom: 25px;
+  font-weight: 300;
+  padding: 0 8px;
+  border-radius: 5px;
+}
+
+.payment-transpost .transpost p {
+  font-weight: 350;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.payment-transpost .transpost .value-input {
+  margin: 10px 0;
+  padding: 0 15px;
+}
+
+.payment-transpost .next-step-btn {
+  margin-left: 90%;
+  transform: translateX(-100%);
+  width: 100px;
+}
+
+.payment-transpost #notice-form {
+  color: red;
+  font-weight: 300;
+  visibility: hidden;
+}
+
+.payment-payment p {
+  margin-bottom: 35px;
+}
+
+.payment-payment .value-input {
+  margin: 20px 15px;
+  height: auto;
+}
+
+.payment-payment .value-input div {
+  margin: 20px 30px;
+  color: #666;
+  display: none;
+}
+
+.payment-payment .next-step-btn {
+  margin-left: 90%;
+  transform: translateX(-100%);
+  width: 100px;
+}

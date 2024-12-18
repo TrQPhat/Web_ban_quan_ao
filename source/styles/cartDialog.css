@@ -38,7 +38,7 @@
   background-color: white;
   width: 100%;
   max-height: 100%;
-  padding: 20px;
+  padding: 20px 0 20px 20px;
   border-radius: 8px;
   position: relative;
 }
@@ -91,7 +91,10 @@
 
 .cart-dialog .pay-btn {
   background-color: #000;
-  color: #fff;
+}
+
+.cart-dialog .pay-btn a {
+  color: #fff !important;
 }
 
 .cart-dialog .detail-btn {
@@ -163,7 +166,7 @@
 }
 
 .cart-total {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   display: flex;
   width: 100%;

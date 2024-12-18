@@ -9,6 +9,7 @@
 <body>
 
     <?php
+        $_SESSION['previous_url'] = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
       if (!isset($_GET['id'])) exit;
       $masp = $_GET['id'];
       $query = "SELECT soluong from tonkho

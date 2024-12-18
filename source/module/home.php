@@ -36,7 +36,7 @@
                 WHERE tk.mach = ? AND sp.ghichu = 'Sản phẩm mới'
                 GROUP BY sp.masp
                 HAVING SUM(tk.soluong) > 0
-                LIMIT ".LIMIT_ITEM." OFFSET $offset";
+                LIMIT ".LIMIT_ITEM." OFFSET $offset"; 
             $listOfProducts = $db->executeQueryWithParams($query, [MA_CH]);
             
             foreach ($listOfProducts as $sp){

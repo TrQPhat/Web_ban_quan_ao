@@ -12,9 +12,12 @@
     else if ($mod == 'product_detail'){
         include "module/product_detail.php";
     }
+    else if ($mod == 'payment'){
+        include "module/payment/index.php";
+    }
     else if ($mod == 'account'){
         ob_clean();
-        header("Location: module/account.html");
+        header("Location: module/account.php");
         ob_end_flush();
         exit();
     }

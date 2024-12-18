@@ -9,13 +9,12 @@ setNumOfCart();
 // Gọi hàm renderCart khi trang tải
 document.addEventListener("DOMContentLoaded", renderCart);
 
+let totalValueOfCart = 0;
+
+let tranpostFee = 30000;
+
 function closeCartDialog() {
   document.getElementById("cartDialog").style.display = "none";
-}
-
-function checkout() {
-  alert("Đang tiến hành thanh toán...");
-  closeCartDialog();
 }
 
 function addToCart() {
@@ -86,17 +85,16 @@ function setNumOfCart() {
 
 // Hàm hiển thị giỏ hàng
 function renderCart() {
-  const cartContainer = document.getElementById("cartItems"); // Vùng chứa giỏ hàng
-  cartContainer.innerHTML = ""; // Xóa nội dung cũ (nếu có)
+  const items = document.querySelectorAll(".cartItems"); // Vùng chứa giỏ hàng
+
+  content = ""; // Xóa nội dung cũ (nếu có)
 
   // Lấy dữ liệu từ localStorage
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  let totalValueOfCart = 0;
-
   // Duyệt qua từng sản phẩm và tạo HTML
   if (cart.length == 0) {
-    cartContainer.innerHTML += "Không có sản phẩm nào.";
+    content += "Không có sản phẩm nào.";
   } else {
     cart.forEach((product, index) => {
       totalValueOfCart += product.quantity * product.price;
@@ -109,14 +107,17 @@ function renderCart() {
             <h3 class="product-title">${product.name}</h3>
             <p class="product-size">Size: ${product.size}</p>
             <p class="product-size">Số lượng: ${product.quantity}</p>
-            <p class="product-price">Giá: ${product.price.toLocaleString()} VND</p>
+            <p class="product-price">Giá: ${product.price.toLocaleString(
+              "vi-VN"
+            )} VNĐ</p>
           </div>
           <button class="close-btn" onclick="removeFromCart(${index})">&times;</button>
         </div>
       `;
-      cartContainer.innerHTML += productHTML;
+      content += productHTML;
     });
-    cartContainer.innerHTML += `
+
+    content += `
       <div class="cart-total">
         TỔNG:
         <p id="total-value-cart">${totalValueOfCart.toLocaleString(
@@ -124,6 +125,25 @@ function renderCart() {
         )} VNĐ</p>
       </div>`;
   }
+  items.forEach((item) => {
+    item.innerHTML = content;
+  });
+
+  document.querySelector(
+    ".product-total"
+  ).innerHTML += `<p id="total-value-cart">${totalValueOfCart.toLocaleString(
+    "vi-VN"
+  )}</p>`;
+  document.querySelector(
+    ".tranfer-fee"
+  ).innerHTML += `<p id="total-value-cart">${tranpostFee.toLocaleString(
+    "vi-VN"
+  )}</p>`;
+  document.getElementById(
+    "total-bill-payment"
+  ).innerHTML += `<p id="total-value-cart">${(
+    totalValueOfCart + tranpostFee
+  ).toLocaleString("vi-VN")} VNĐ</p>`;
 }
 
 // Xóa sản phẩm khỏi giỏ hàng

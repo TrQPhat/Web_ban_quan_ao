@@ -1,4 +1,4 @@
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Đặt thời gian tắt preloader và thực hiện hiệu ứng mờ dần
   setTimeout(function () {
     const preLoader = document.getElementById("preLoader");

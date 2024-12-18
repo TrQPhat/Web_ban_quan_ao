@@ -20,6 +20,6 @@ function resetBtnSize(i) {
 
 function changeSize(index) {
   btnSizes[index].className += " active";
-  resetBtnSize(selectedSize);
-  selectedSize = index;
+  resetBtnSize(currentBarItem);
+  currentBarItem = index;
 }

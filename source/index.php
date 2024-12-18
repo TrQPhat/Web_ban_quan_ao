@@ -32,14 +32,21 @@
     <script type="text/javascript" src="scripts/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
     <script type="text/javascript" src="scripts/all_page.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <?php 
         $mod = isset($_GET['mod']) ? $_GET['mod'] : "home";
         $title = "Trang chủ";
-        if ($mod == "contact") {
+        if ($mod == "home"){
+            $title = "Trang chủ";
+            $_SESSION['previous_url'] = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        }
+        else if ($mod == "contact") {
             $title = "Liên hệ";
             echo '<link rel="stylesheet" href="styles/lien_he.css" />';
         }
+        else if ($mod == "product") $title = "Sản phẩm";
+        else if ($mod == "payment") $title = "Thanh toán";
         else if ($mod == "account") $title = "Tài khoản";
         else if ($mod == "product_detail"){
             $title = "Chi tiết";

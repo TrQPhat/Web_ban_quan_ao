@@ -3,7 +3,9 @@ function loadClass($c)
 {
 	include ROOT."/model/".$c.".class.php";
 }
-
+function alert_show($message){
+	echo "<script> alert('$message'); </script>";
+}
 function getIndex($index, $value='none')
 {
 	$data = isset($_GET[$index])? $_GET[$index]:$value;

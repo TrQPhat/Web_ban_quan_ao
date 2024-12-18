@@ -1,6 +1,7 @@
 <!-- banner -->
 <?php 
     include "include/banner.php" ; 
+    $_SESSION['previous_url'] = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $query = "SELECT COUNT(*) AS num
             FROM (
             SELECT sp.masp

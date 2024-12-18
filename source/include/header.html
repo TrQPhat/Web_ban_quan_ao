@@ -122,13 +122,14 @@
               onclick="closeCartDialog()"
             ></i>
             <div class="dialog-title">Giỏ Hàng</div>
-            <div id="cartItems">
+            <div id="cartItems" class="cartItems">
+
               <!-- <script src="cartEvent.js"></script> -->
             </div>
 
             <div class="dialog-footer">
-              <button class="dialog-mode-btn pay-btn" onclick="checkout()">
-                Thanh toán
+              <button class="dialog-mode-btn pay-btn"">
+                <a href="../index.php?mod=payment"> Thanh toán </a>
               </button>
               <button class="dialog-mode-btn detail-btn">Chi tiết</button>
             </div>
