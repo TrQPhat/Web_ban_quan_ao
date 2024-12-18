@@ -4,6 +4,22 @@
     padding: 0;
     background-color: #f4f4f9;
 }
+.hidden {
+    display: none;
+}
+.form-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+table {
+    background: #fff;
+}
+.search-input {
+    flex: 1;
+}
 header {
     background-color: #f37db8;
     color: #fff;
@@ -46,4 +62,11 @@ main {
 }
 .card a:hover {
     color: #007bff;
+}
+img.product-image {
+    width: 15%;
+    height: 15%; 
+    object-fit: cover; 
+    border: 0.5px solid #ddd; 
+    border-radius: 3px;
 }

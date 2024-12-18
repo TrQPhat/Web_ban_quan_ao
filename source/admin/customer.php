@@ -64,27 +64,6 @@ if (isset($_GET['edit'])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .hidden {
-            display: none;
-        }
-        .form-container {
-            margin-top: 20px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        table {
-            background: #fff;
-        }
-        .search-input {
-            flex: 1;
-        }
-    </style>
 </head>
 <body>
 <header>

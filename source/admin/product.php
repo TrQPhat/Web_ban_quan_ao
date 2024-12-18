@@ -12,15 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mota = $_POST['mota'];
     $maloai = $_POST['maloai'];
     $math = $_POST['math'];
-    $mad = $_POST['mad'];
+
     $masize = $_POST['masize'];
     $gianhap = $_POST['gianhap'];
     $giaban = $_POST['giaban'];
 
-    // Handle multiple image upload
+    // Tải lên nhiều hình ảnh
     $imageNames = [];
     if (isset($_FILES['hinh']) && $_FILES['hinh']['error'][0] == 0) {
-        $uploadDir = 'uploads/';
+        $uploadDir = 'images/products/';
         foreach ($_FILES['hinh']['tmp_name'] as $key => $tmpName) {
             $imageName = $_FILES['hinh']['name'][$key];
             move_uploaded_file($tmpName, $uploadDir . $imageName);
@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['edit'])) {
         // Cập nhật sản phẩm
-        $query = "UPDATE sanpham SET tensp = ?, mota = ?, maloai = ?, math = ?, mad = ?, masize = ?, gianhap = ?, giaban = ? WHERE masp = ?";
-        $params = [$tensp, $mota, $maloai, $math, $mad, $masize, $gianhap, $giaban, $masp];
+        $query = "UPDATE sanpham SET tensp = ?, mota = ?, maloai = ?, math = ?, masize = ?, gianhap = ?, giaban = ? WHERE masp = ?";
+        $params = [$tensp, $mota, $maloai, $math, $masize, $gianhap, $giaban, $masp];
 
         $stmt = $pdo->prepare($query);
         $stmt->execute($params);
@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('Sản phẩm đã được cập nhật thành công!');</script>";
     } else {
         // Thêm sản phẩm mới
-        $stmt = $pdo->prepare("INSERT INTO sanpham (masp, tensp, mota, maloai, math, mad, masize, gianhap, giaban) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$masp, $tensp, $mota, $maloai, $math, $mad, $masize, $gianhap, $giaban]);
+        $stmt = $pdo->prepare("INSERT INTO sanpham (masp, tensp, mota, maloai, math, masize, gianhap, giaban) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$masp, $tensp, $mota, $maloai, $math, $masize, $gianhap, $giaban]);
 
         // Lưu thông tin hình ảnh vào bảng hinhanh_sanpham
         foreach ($imageNames as $imageName) {
@@ -99,30 +99,8 @@ if (isset($_GET['edit'])) {
     <title>Quản lý sản phẩm</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .hidden {
-            display: none;
-        }
-        .form-container {
-            margin-top: 20px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        table {
-            background: #fff;
-        }
-        .search-input {
-            flex: 1;
-        }
-    </style>
 </head>
 <body>
-
 <header>
     <h1>Trang quản trị cửa hàng</h1>
 </header>
@@ -180,18 +158,11 @@ if (isset($_GET['edit'])) {
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">Màu sắc:</label>
-                <select name="mad" class="form-select" required>
-                    <option value="">-- Chọn màu sắc --</option>
-                    <!-- Add color options -->
-                </select>
-            </div>
-            <div class="mb-3">
                 <label class="form-label">Kích cỡ:</label>
                 <select name="masize" class="form-select" required>
                     <option value="">-- Chọn kích cỡ --</option>
                     <?php foreach ($sizes as $size): ?>
-                        <option value="<?= $size['masize'] ?>" <?= ($editProduct['masize'] ?? '') == $size['masize'] ? 'selected' : '' ?>><?= $size['ten'] ?></option>
+                        <option value="<?= $size['masize'] ?>" <?= ($editProduct['masize'] ?? '') == $size['masize'] ? 'selected' : '' ?>><?= $size['tensize'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
@@ -237,8 +208,8 @@ if (isset($_GET['edit'])) {
                         $images = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         foreach ($images as $image) {
-                            echo '<img src="uploads/' . htmlspecialchars($image['ten']) . '" alt="Product Image" width="100" height="100" class="me-2">';
-                        }
+                            echo '<img src="../images/products/' . htmlspecialchars($image['ten']) . '" alt="Hình sản phẩm" class="product-image">';
+                        }                        
                         ?>
                     </td>
                     <td>
@@ -257,7 +228,6 @@ if (isset($_GET['edit'])) {
         form.classList.toggle('hidden');
     }
 </script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
