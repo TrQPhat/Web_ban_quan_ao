@@ -16,8 +16,12 @@
                 WHERE mach= ? AND masp = ?;";
       $sl = $db->executeQueryWithParams($query, [MA_CH, $masp]);
       
+      $query = "SELECT soluong from tonkho
+                WHERE mach= ? AND masp = ? AND masize=?;";
 
+      $size = "L";
       
+      $gh= $db->executeScalarWithParams($query,[MA_CH, $masp, $size]); 
 
     ?>
 
@@ -73,29 +77,36 @@
             </p>
             <p class="product-sku">SKU: <?php echo $product['masp']; ?></p>
 
+            <?php
+                $query = "select soluong from tonkho where mach=? and masp=?";
+                $quantities = $db->executeQueryWithParams($query, [MA_CH, $masp]);
+                //  var_dump($quantities); exit;
+            ?>
+
             <!-- Kích cỡ -->
             <div class="product-size">
                 <span>Kích cỡ:</span>
                 <button class="size-btn" onclick="changeSize(0)" value="S"
-                    <?php if ($sl[2]['soluong']==0) echo "disabled"  ?>>
-                    S</button>
+                    <?php if ($sl[2]['soluong']==0) echo "disabled"  ?>>S</button>
                 <button class="size-btn" onclick="changeSize(1)" value="M"
                     <?php if ($sl[1]['soluong']==0) echo "disabled"  ?>>M</button>
                 <button class="size-btn active" onclick="changeSize(2)" value="L"
                     <?php if ($sl[0]['soluong']==0) echo "disabled"  ?>>L</button>
                 <button class="size-btn" onclick="changeSize(3)" value="XL"
                     <?php if ($sl[3]['soluong']==0) echo "disabled"  ?>>XL</button>
+
             </div>
 
             <!-- Số lượng -->
             <div class="product-quantity">
                 <span>Số lượng:</span>
-                <div class="quantity-wrapper">
+                <div class="quantity-wrapper" id="abcxyz">
                     <button class="quantity-btn" id="decrease">
                         <i class="fa-solid fa-minus"></i>
                     </button>
-                    <input type="number" value="1" id="quantity" />
-                    <button class="quantity-btn" id="increase">
+                    <input type="number" value="1" id="quantity" max="<?php echo $gh ?>" />
+
+                    <button class=" quantity-btn" id="increase">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>

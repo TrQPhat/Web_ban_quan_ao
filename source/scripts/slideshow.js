@@ -21,7 +21,7 @@ function showSlides(n) {
   if (n > slides.length) {
     slideIndex = 1;
   }
-  if (n < 1) {
+  if (n < 0) {
     slideIndex = slides.length;
   }
 

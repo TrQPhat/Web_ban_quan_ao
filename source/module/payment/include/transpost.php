@@ -93,8 +93,10 @@
         </div>
 
     </div>
-    <button class="payment-action-btn next-step-btn" onclick="validateForm(2)" name="next_step">TIẾP
-        TỤC</button>
 
-    <div></div>
+    <div class="payment-btn payment-transpost-action-btn">
+        <div class="payment-action-btn next-step-btn" onclick="validateForm(2)" name="next_step">TIẾP
+            TỤC</div>
+    </div>
+
 </section>

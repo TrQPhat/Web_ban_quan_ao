@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 40px;
+  position: relative;
 }
 
 .payment-container .process-bar {
@@ -22,7 +23,7 @@
   border: none;
 }
 
-.payment-container form {
+.payment-container .payment-info {
   width: 100%;
   margin-bottom: 30px;
   /* line-height: 3; */
@@ -30,14 +31,50 @@
   background: none;
 }
 
+#payment-form {
+  position: relative;
+}
+
 .payment-container .payment-page {
-  display: none;
+  visibility: hidden;
+  position: relative;
+  top: 0;
+  right: 0;
   background: none;
   width: 100%;
 }
 
 .payment-container .payment-page.active {
-  display: block;
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.payment-page p {
+  font-weight: 350;
+  color: #666;
+  margin-bottom: 10px !important;
+}
+
+.payment-page .payment-btn {
+  display: flex;
+}
+.payment-page .payment-btn .payment-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  margin: 5px;
+}
+
+.payment-page .payment-btn .next-step-btn {
+  position: absolute;
+  right: 95px;
+  transform: translateX(50%);
+  background-color: #000;
+  color: #fff;
+  min-width: 110px;
 }
 
 .payment-container .process-bar-item.selected {
@@ -54,12 +91,6 @@
   margin-bottom: 30px;
 }
 
-.payment-container p {
-  margin: 0 0 20px 0;
-  font-weight: 350;
-  color: #666;
-}
-
 .payment-checkout input {
   width: 80%;
   height: 50px;
@@ -70,15 +101,8 @@
   border-radius: 5px;
 }
 
-.payment-actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
 .payment-action-btn {
   height: 45px;
-  min-width: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -89,11 +113,6 @@
 
 .payment-action-btn:hover {
   background-color: #ebb861;
-}
-
-.next-step-btn {
-  background-color: #000;
-  color: #fff;
 }
 
 .none-email-btn {
@@ -111,7 +130,7 @@
 /* Phần Giỏ hàng */
 .payment-container .cart-dialog {
   display: block;
-  height: 600px;
+  height: 650px;
   position: static;
   flex: 2;
   margin: 0 0 0 0 !important;
@@ -143,6 +162,10 @@
   font-size: 18px;
 }
 
+.payment-container .dialog-footer p {
+  color: #000;
+}
+
 .payment-container .product-total .product-total-title {
   flex: 1;
 }
@@ -168,7 +191,7 @@
 
 .payment-transpost .information {
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .payment-transpost .information .info-input {
@@ -219,7 +242,7 @@
 .payment-page .value-input {
   height: 35px;
   width: 80%;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-weight: 300;
   padding: 0 8px;
   border-radius: 5px;
@@ -228,7 +251,7 @@
 .payment-transpost .transpost p {
   font-weight: 350;
   color: #666;
-  margin-bottom: 30px;
+  margin-bottom: 10px !important;
 }
 
 .payment-transpost .transpost .value-input {
@@ -263,8 +286,12 @@
   display: none;
 }
 
-.payment-payment .next-step-btn {
+.payment-payment-action-btn {
   margin-left: 90%;
   transform: translateX(-100%);
   width: 100px;
+}
+
+.payment-page-complete {
+  position: relative !important;
 }

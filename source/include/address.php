@@ -43,6 +43,19 @@
         }
     }
 
+    function executeScalarWithParams($sql, $params = []) {
+        $conn = connectdb();
+        try {
+            $stmt = $conn->prepare($sql);
+            $stmt->execute($params);
+            $result = $stmt->fetchColumn();
+            return $result;
+        } catch (PDOException $e) {
+            echo "Lỗi truy vấn: " . $e->getMessage();
+            return null;
+        }
+    }
+
     function getAllProvinces(){
         $sql = "SELECT code, name FROM `provinces` ORDER BY name;";
         return excuteSQL($sql);
@@ -58,6 +71,20 @@
         return executeSQLWithParams($sql, [$district_code]);
     
     }
+
+    function getProvinceByCode($province_code){
+        $sql = "SELECT full_name FROM `provinces` WHERE code = ?";
+        return executeScalarWithParams($sql,[$province_code]);
+    }
+    function getDistrictByCode($district_code){
+        $sql = "SELECT full_name FROM `districts` WHERE code = ?";
+        return executeScalarWithParams($sql,[$district_code]);
+    }
+    function getWardByCode($ward_code){
+        $sql = "SELECT full_name FROM `wards` WHERE code = ?";
+        return executeScalarWithParams($sql,[$ward_code]);
+    }
+
 
     $provinces = getAllProvinces();
 

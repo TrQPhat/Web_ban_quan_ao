@@ -11,9 +11,11 @@
             <input type="radio" name="pay" value="cod" id="ship-cod" onchange="changeTypeOfPay(1)" checked>
             <label for=" momo">THANH TOÁN KHI NHẬN HÀNG (COD)</label>
         </div>
-
-
     </div>
-    <input class="payment-action-btn next-step-btn" onclick="validateForm(3)" name="submit" type="submit"
-        value="TIẾP TỤC">
+
+    <div class="payment-btn payment-payment-action-btn active">
+        <button class="payment-action-btn next-step-btn" onclick="validateForm(3)" name="submit" type="submit">Hoàn
+            tất</button>
+    </div>
+
 </section>

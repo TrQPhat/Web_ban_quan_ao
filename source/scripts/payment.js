@@ -14,8 +14,10 @@ function clickBarItem(index) {
 }
 
 function changeCurrentBarItem(index) {
+  document.getElementById("notice-form").style.visibility = "hidden";
   barItems[index].className += " selected";
   paymentPage[index].className += " active";
+
   resetBarItem(currentBarItem);
   currentBarItem = index;
 }
@@ -28,10 +30,12 @@ function isValidEmail(email) {
 
 let checkForm = false;
 function validateForm(index) {
+  let valid = true;
   if (index == 1) {
     const emailInput = document.getElementById("emailDatHang").value;
     if (!isValidEmail(emailInput)) {
       alert("Email không hợp lệ.");
+      valid = false;
       return;
     }
   } else if (index == 2) {
@@ -44,27 +48,23 @@ function validateForm(index) {
     const ward = document.getElementById("ward");
     const address = document.getElementById("address");
 
-    let valid = true;
     // Kiểm tra trường "Họ và tên"
     if (!validateFullName(name.value.trim())) {
       valid = false;
     }
     // Kiểm tra trường "Ngày sinh"
-    if (birthday.value === "" && s) {
-      birthday.focus;
-      alert("birthday");
+    if (birthday.value === "") {
       valid = false;
     }
     if (!validateAge(birthday.value)) {
-      birthday.focus;
       valid = false;
     }
     // Kiểm tra trường "Số điện thoại"
     const phonePattern = /^[0-9]{10}$/; // Kiểm tra số điện thoại 10 chữ số
     if (!phone.value.match(phonePattern)) {
-      phone.focus;
       valid = false;
     }
+
     // Kiểm tra trường "Tỉnh/Thành phố"
     if (province.value === "none") {
       valid = false;
@@ -77,28 +77,33 @@ function validateForm(index) {
     if (ward.value === "none") {
       valid = false;
     }
-    // // Kiểm tra trường "Địa chỉ"
-    // if (!validateAddress(address.value.trim())) {
-    //   valid = false;
-    // }
-    //alert(valid);
+    // Kiểm tra trường "Địa chỉ"
+    if (address.value.trim() == "") {
+      valid = false;
+    }
     if (!valid) {
       document.getElementById("notice-form").style.visibility = "visible";
       return;
     }
+  }
 
-    document.getElementById("notice-form").style.visibility = "hidden";
-  } else if (index == 3) checkForm = true;
+  document
+    .getElementById("payment-form")
+    .addEventListener("submit", function (event) {
+      if (!valid) event.preventDefault();
+    });
 
   changeCurrentBarItem(index);
   return;
 }
 
-document
-  .getElementById("payment-form")
-  .addEventListener("submit", function (event) {
-    if (!checkForm) event.preventDefault();
-  });
+function preventSubmitForm() {
+  document
+    .getElementById("payment-form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+    });
+}
 
 function validateFullName(name) {
   const regex =
@@ -157,3 +162,32 @@ function changeTypeOfPay(index) {
   if (index == 0) note.style.display = "block";
   else note.style.display = "none";
 }
+
+// function addProduct(mahd) {
+//   const cart = JSON.parse(localStorage.getItem("cart")) || []; // Lấy giỏ hàng từ localStorage
+
+//   if (cart.length === 0) {
+//     alert("Giỏ hàng trống.");
+//     return;
+//   }
+
+//   $.ajax({
+//     url: "../include/order.php",
+//     type: "POST",
+//     data: {
+//       cart: JSON.stringify(cart), // Chuyển giỏ hàng thành chuỗi JSON
+//       mahd: mahd, // Mã hóa đơn
+//     },
+//     success: function (response) {
+//       if (response.success) {
+//         alert("Đặt hàng thành công");
+//         localStorage.removeItem("cart"); // Xóa giỏ hàng sau khi đặt thành công
+//       } else {
+//         alert("Có lỗi xảy ra: " + response.message);
+//       }
+//     },
+//     error: function () {
+//       alert("Không thể kết nối tới server.");
+//     },
+//   });
+// }

@@ -1,7 +1,7 @@
 <?php
 class DBHelper {
     private $dbhelper = null;  // Đối tượng PDO
-
+    public $last_id_insert = null;
     public function __construct() {
         $driver = "mysql:host=" . HOST . "; dbname=" . DB_NAME;
         try {
@@ -78,6 +78,7 @@ class DBHelper {
         try {
             $stmt = $this->dbhelper->prepare($sql);
             $stmt->execute($params);
+            $this->last_id_insert = $this->dbhelper->lastInsertId();
             return true;
         } catch (PDOException $e) {
             echo "Lỗi thực thi: " . $e->getMessage();

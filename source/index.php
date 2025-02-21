@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="../styles/cartDialog.css" />
 
     <!--Script-------------------------->
-    <script type="text/javascript" src="scripts/slideshow.js"></script>
     <script type="text/javascript" src="scripts/page_preloader.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>

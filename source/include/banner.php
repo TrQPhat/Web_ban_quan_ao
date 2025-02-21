@@ -33,3 +33,4 @@
         ?>
     </div>
 </section>
+<script type="text/javascript" src="scripts/slideshow.js"></script>
